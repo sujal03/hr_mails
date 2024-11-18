@@ -78,7 +78,7 @@ def main():
             return
         
         # Backend data
-        resume_path = "resume.pdf"
+        resume_path = "SujalTamrakar.py.pdf"
        
         # Generate email
         email_body = f"""
