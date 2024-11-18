@@ -1,5 +1,4 @@
 
-
 import streamlit as st
 import yagmail
 from datasets import load_dataset, Dataset, concatenate_datasets
@@ -79,17 +78,35 @@ def main():
             return
         
         # Backend data
-        resume_path = "SujalTamrakar.py.pdf"
+        resume_path = "resume.pdf"
        
         # Generate email
         email_body = f"""
-        Hi,
+Dear Hiring Manager,
 
-        I'm Sujal Tamrakar, and I'm interested in the {job_profile} position at {company_name}. I have a background in B.Tech(IT). I'm excited about the opportunity to contribute to your team. Please find my resume attached.
+I'm excited to apply for the {job_profile} role at {company_name}. With a strong IT background (B.Tech, CGPA: 7.97) and experience in AI, Machine Learning, and Web Development, I'm confident in my ability to contribute to your team.
 
-        Thank you,
-        Sujal Tamrakar
-        +91-7067599678
+Key Highlights:
+
+- AI Intern at VKAPS IT Solutions: Built & deployed AI projects using LangChain Python OpenAI
+- Data Science Trainee at Grow Tech: Utilized exploratory data analysis and SQL
+- Projects: Online Code Review Tool, Automatic Ticket Classification Tool (details on attached resume)
+
+Tech Skills:
+
+- Programming: Python, SQL
+- AI/ML: LangChain, LLMs, Pinecone, Cohere
+- Web Dev: Streamlit
+Attached: Resume (including full project details, education, and additional experience)
+
+Contact:
+
+- Email: sujal.tamrakar@outlook.com
+- Phone: +91-7067599678
+- LinkedIn: linkedin.com/in/sujaltamrakar
+- GitHub: github.com/sujal03
+
+Best Regards, Sujal Tamrakar
         """
         
         # Email configuration
@@ -99,7 +116,7 @@ def main():
         
         # Send email
         try:
-            send_email(hr_email, f"Job Application for {job_profile}", email_body, resume_path, sender_email, sender_password)
+            send_email(hr_email, f"Application for {job_profile} at {company_name}", email_body, resume_path, sender_email, sender_password)
             st.success("Email sent successfully!")
 
             # Prepare data to store
